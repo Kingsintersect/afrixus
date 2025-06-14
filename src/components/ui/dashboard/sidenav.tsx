@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import AcmeLogo from '@/components/ui/acme-logo';
 import { PowerIcon } from 'lucide-react';
-import { signOut } from '@/auth';
+import { signOut } from '@/actions/auth';
 import NavLinks from './nav-links';
 
 export default function SideNav() {

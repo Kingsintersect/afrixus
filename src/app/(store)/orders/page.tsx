@@ -1,6 +1,6 @@
 import { getMyOrders } from "@/actions/ordersAction";
 import { formatCurrency } from "@/lib/formatCurrency";
-import { auth } from "@/auth";
+import { auth } from "@/actions/auth";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 

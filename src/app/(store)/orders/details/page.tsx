@@ -1,5 +1,5 @@
 import { getOrderDetailsByOrderNumber } from '@/actions/ordersAction';
-import { auth } from '@/auth';
+import { auth } from '@/actions/auth';
 import { PagePropsWithId } from '@/lib/definitions';
 import { formatCurrency } from '@/lib/formatCurrency';
 import { imageUrl } from '@/lib/imageUrl';

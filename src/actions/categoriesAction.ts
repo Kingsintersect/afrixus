@@ -1,6 +1,6 @@
 "use server";
 
-import { auth } from "@/auth";
+import { auth } from "@/actions/auth";
 import { apiCall } from "@/lib/api.utils";
 import { AllCategorysResponse, Category, CategoryFormValues, categorySchema, CreateCategoryResponse, DeleteCategoryResponse, SingleCategoryResponse } from "@/schemas/category-schema";
 

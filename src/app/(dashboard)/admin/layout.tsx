@@ -1,4 +1,4 @@
-import { auth } from "@/auth";
+import { auth } from "@/actions/auth";
 import SideNav from "@/components/ui/dashboard/sidenav";
 import { redirect } from "next/navigation";
 

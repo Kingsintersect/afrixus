@@ -6,7 +6,7 @@ import fs from "fs/promises";
 import path from "path";
 import { Product, ProductFormValues, AllProductsResponse, SingleProductResponse, DeleteProductResponse } from "@/schemas/product-schema";
 import { apiCall } from "@/lib/api.utils";
-import { auth } from "@/auth";
+import { auth } from "@/actions/auth";
 
 export async function getAllProducts(): Promise<Product[]> {
 	const response = await apiCall<undefined, AllProductsResponse>({

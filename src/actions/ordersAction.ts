@@ -1,6 +1,6 @@
 "use server";
 
-import { auth } from "@/auth";
+import { auth } from "@/actions/auth";
 import { apiCall } from "@/lib/api.utils";
 import { AllOrdersResponse, CreateOrderResponse, Order, OrderDetails, SingleOrderDetailsResponse } from "@/schemas/order-schema";
 
