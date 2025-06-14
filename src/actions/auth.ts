@@ -1,8 +1,8 @@
+import { signInSchema } from "@/schemas/auth-schemas";
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import { validateUser } from "./actions/userAction";
-import { signInSchema } from "./schemas/auth-schemas";
-import { UserRole } from "./lib/definitions";
+import { validateUser } from "./userAction";
+import { UserRole } from "@/lib/definitions";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
 	providers: [
