@@ -1,6 +1,6 @@
 "use server";
 
-import { signIn, signOut } from "@/auth";
+import { signIn, signOut } from "./auth";
 import { createUser } from "./userAction";
 import { SignInSchemaType, signUpSchemaType } from "@/schemas/auth-schemas";
 
