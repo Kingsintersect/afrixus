@@ -1,3 +1,4 @@
+import { UserRole } from "@/lib/definitions";
 import "next-auth";
 token.role = user.role;
 
@@ -5,7 +6,7 @@ declare module "next-auth" {
   interface Session {
     user: {
       id: string;
-      role: string;
+      role: UserRole;
       email: string;
       name?: string;
       access_token?: string;

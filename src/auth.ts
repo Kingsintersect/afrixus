@@ -2,6 +2,7 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { validateUser } from "./actions/userAction";
 import { signInSchema } from "./schemas/auth-schemas";
+import { UserRole } from "./lib/definitions";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
 	providers: [
@@ -56,7 +57,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 			if (token && session.user) {
 				session.user.id = token.id as string;
 				session.user.first_name = token.first_name as string;
-				session.user.role = token.role as string;
+				session.user.role = token.role as UserRole;
 				session.user.access_token = token.access_token as string;
 				session.user.email = token.email as string;
 			}

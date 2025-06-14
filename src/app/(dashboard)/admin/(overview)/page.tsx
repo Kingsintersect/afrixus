@@ -1,10 +1,10 @@
 import CardWrapper from '@/components/ui/dashboard/cards';
-import RevenueChart from '@/components/ui/dashboard/revenue-chart';
-import LatestInvoices from '@/components/ui/dashboard/latest-invoices';
 import { lusitana } from '@/components/ui/fonts';
 import { Suspense } from 'react';
 import { CardsSkeleton, LatestInvoicesSkeleton, RevenueChartSkeleton } from '@/components/ui/skeletons';
 import { Metadata } from 'next';
+import { RevenueChart } from '@/components/ui/dashboard/RevenueChart';
+import { LatestInvoices } from '@/components/ui/dashboard/LatestInvoices';
 
 export const metadata: Metadata = {
     title: 'Dashboard',
@@ -22,7 +22,7 @@ export default async function Page() {
                     <CardWrapper />
                 </Suspense>
             </div>
-            <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
+            <div className="mt-[10vh] grid grid-cols-1 gap-6 md:grid-cols-2">
                 <Suspense fallback={<RevenueChartSkeleton />}>
                     <RevenueChart />
                 </Suspense>

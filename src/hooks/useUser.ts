@@ -2,23 +2,22 @@
 
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
-import { Customer } from "@/schemas/customer-schema";
+import { UserRole } from "@/lib/definitions";
+import { UserStateType } from "@/schemas/customer-schema";
 
 export function useUser() {
 	const { data: session } = useSession();
-	const [user, setUser] = useState<Customer | null>(null);
+	const [user, setUser] = useState<UserStateType | null>(null);
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 
 	useEffect(() => {
 		if (session?.user) {
 			setUser({
-				// id: parseInt(session.customer.id),
-				id: session.user.id,
+				id: parseInt(session.user.id),
 				email: session.user.email!,
-				name: session.user.name || "",
-				password: "",
-				role: session.user.role || "user",
+				first_name: session.user.name || "",
+				role: session.user.role || UserRole.USER,
 			});
 		} else {
 			setUser(null);
@@ -46,9 +45,8 @@ export function useUser() {
 			setUser(updatedUser);
 			return { success: true };
 		} catch (error) {
-			const errorMessage = `Failed to update profile: ${
-				error instanceof Error ? error.message : "Unknown error"
-			}`;
+			const errorMessage = `Failed to update profile: ${error instanceof Error ? error.message : "Unknown error"
+				}`;
 			setError(errorMessage);
 			return { success: false, error: errorMessage };
 		} finally {

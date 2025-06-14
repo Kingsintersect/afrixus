@@ -1,6 +1,12 @@
 import { UserRole } from "@/lib/definitions";
 import { Order } from "./order-schema";
 import { LoginResponse } from "@/types/api-types";
+export interface UserStateType {
+	id: number;
+	email: string;
+	first_name: string;
+	role: UserRole;
+}
 
 export type Customer = {
 	id: number;
